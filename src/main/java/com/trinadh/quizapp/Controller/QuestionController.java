@@ -25,4 +25,12 @@ public class QuestionController {
     public List<Question> getAllQuestionsByCategory(@PathVariable String categoryType){
             return questionService.getAllQuestionsByCategory(categoryType);
     }
+
+
+    @PostMapping("/add")
+    public String addQuestion(@RequestBody Question question){
+
+        System.out.println(" get question from client is : " + question);
+            return questionService.addQuestion(question);
+    }
 }
