@@ -3,9 +3,7 @@ package com.trinadh.quizapp.Controller;
 import com.trinadh.quizapp.Question;
 import com.trinadh.quizapp.Service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,5 +18,11 @@ public class QuestionController {
     @GetMapping("allQuestions")
     public List<Question> getAllQuestions() throws SQLException {
         return questionService.questionService();
+    }
+
+
+    @GetMapping("category/{categoryType}")
+    public List<Question> getAllQuestionsByCategory(@PathVariable String categoryType){
+            return questionService.getAllQuestionsByCategory(categoryType);
     }
 }

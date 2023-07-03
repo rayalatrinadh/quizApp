@@ -17,8 +17,13 @@ public class QuestionService {
     @Autowired
     QuestionDAO questionDAO;
 
-    public   List<Question> questionService() throws SQLException {
+    public   List<Question> questionService()  {
          return questionDAO.findAll();
+    }
+
+
+    public List<Question> getAllQuestionsByCategory(String categoryType) {
+        return questionDAO.findByCategory(categoryType);
     }
 
 }
