@@ -1,0 +1,17 @@
+﻿id,category,difficultylevel,option1,option2,option3,option4,question_title,right_answer
+1,JAVA,Easy,class,interface,extends,implements,which java keyword is used to create a subclass?,extends
+2,java,Easy,4,5,6,Compile error,what is the output of the following Java Code snippet?,5
+3,java,Easy,TRUE,FALSE,0,null,"In java, what is the default value of an unitialized boolean variable?",FALSE
+4,java,Easy,try,throw,catch,finally,which java keyword is used to explicitly throw an exception?,throw
+5,java,Easy,it indicates that a variable is constant.,it indicates that a method can be accessed without,it indicates that a class cannot be extended.,It indicates that a variable is of primitive type.,What does the 'static'keyword mean in java?,it indicates that a method can be accessed 
+6,java,Easy,constant int x= 5;,final int x = 5;,static int x = 5;,readonly int x = 5;,what is the correct way to declare a constant variable in Java?,final int x = 5;
+7,java,Easy,for loop,while loop,do-while loop,switch loop,which loop in java allows the code to be executed at least once?,do-while loop
+8,java,Easy,To terminate a loop or switch statement and transfer control to the ,TO skip the rest of the code in a loop and move to the next iteration.,To define a label for a loop or switch statement.,To check a condition and execute a block of code repeated…,what is the putpose of the 'break'statement in Java?,to terminate a loop or switch 
+9,java,Easy,+,-,*,/,which java operator is used to concatenate two string?,+
+10,java,Easy,HashMap,ArrayList,LinkedList,HashSet,"in java, which collection class provides an implementation of a dynamic array?",ArrayList
+11,Python,Easy,count(),size(),length(),len(),which Python function is used to calculate the length of a list?,len()
+12,Python,Easy,"[1,2,3]","[1,2,3,4]","[4,3,2,1]",Error,what is the output of the following Python code snippet?,"[1,2,3,4]"
+13,Python,Easy,break,continue,pass,return, Which Python statement is used to exit from a loop prematurely?,break
+14,Python,Easy,To generate a random number within a given range.,To iterate over a sequence of numbers.,To sort a list in ascending order.,To calculate the length of string.,what is the purpose of the 'range()'function in Python?,To iterate over a 
+15,Python,Easy,int,float ,str,list,"In Python, which data type is mutable?",list 
+16,Python,Easy,datetime,math,os,,,datetime
