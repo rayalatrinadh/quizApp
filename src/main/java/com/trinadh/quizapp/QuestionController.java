@@ -11,8 +11,6 @@ public class QuestionController {
 
     @GetMapping("allQuestions")
     public String getAllQuestions(){
-
-        System.out.println("changes in July7thBranch");
         return "hello Trinadh Rayala";
     }
 }
