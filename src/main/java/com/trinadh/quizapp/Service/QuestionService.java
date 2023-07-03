@@ -18,7 +18,7 @@ public class QuestionService {
     QuestionDAO questionDAO;
 
     public   List<Question> questionService() throws SQLException {
-         return questionDAO.questionDetailsFetch();
+         return questionDAO.findAll();
     }
 
 }
