@@ -13,8 +13,8 @@ public class Question {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String category;
     private String difficultylevel;
     private String option1;
