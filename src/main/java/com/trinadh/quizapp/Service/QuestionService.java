@@ -4,6 +4,8 @@ package com.trinadh.quizapp.Service;
 import com.trinadh.quizapp.DAO.QuestionDAO;
 import com.trinadh.quizapp.Question;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +19,37 @@ public class QuestionService {
     @Autowired
     QuestionDAO questionDAO;
 
-    public   List<Question> questionService()  {
-         return questionDAO.findAll();
+    public ResponseEntity<List<Question>> questionService()  {
+        try{
+            return new ResponseEntity<>(questionDAO.findAll(),HttpStatus.OK);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        //if exception occurs need to send bad Request
+        return new ResponseEntity<>(new ArrayList(),HttpStatus.BAD_REQUEST);
+
     }
 
 
-    public List<Question> getAllQuestionsByCategory(String categoryType) {
-        return questionDAO.findByCategory(categoryType);
+    public ResponseEntity<List<Question>> getAllQuestionsByCategory(String categoryType) {
+        try{
+            return new ResponseEntity<>(questionDAO.findByCategory(categoryType),HttpStatus.OK);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList(),HttpStatus.BAD_REQUEST);
     }
 
-    public String addQuestion(Question question){
-        questionDAO.save(question);
-        return "success";
-
+    public ResponseEntity<String> addQuestion(Question question){
+        try{
+            questionDAO.save(question);
+            //HttpStatus.CREATED -> because the question created in the database .
+            return new ResponseEntity<>("success",HttpStatus.CREATED);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+            return new ResponseEntity<>("failure",HttpStatus.NOT_ACCEPTABLE);
     }
 
 
