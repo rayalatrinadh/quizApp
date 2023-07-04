@@ -1,6 +1,6 @@
 package com.trinadh.quizapp.Controller;
 
-import com.trinadh.quizapp.Question;
+import com.trinadh.quizapp.Model.Question;
 import com.trinadh.quizapp.Service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
