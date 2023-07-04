@@ -3,6 +3,7 @@ package com.trinadh.quizapp.Controller;
 import com.trinadh.quizapp.Question;
 import com.trinadh.quizapp.Service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
@@ -16,19 +17,19 @@ public class QuestionController {
     QuestionService questionService;
 
     @GetMapping("allQuestions")
-    public List<Question> getAllQuestions() throws SQLException {
+    public ResponseEntity<List<Question>> getAllQuestions() throws SQLException {
         return questionService.questionService();
     }
 
 
     @GetMapping("category/{categoryType}")
-    public List<Question> getAllQuestionsByCategory(@PathVariable String categoryType){
+    public ResponseEntity<List<Question>> getAllQuestionsByCategory(@PathVariable String categoryType){
             return questionService.getAllQuestionsByCategory(categoryType);
     }
 
 
     @PostMapping("/add")
-    public String addQuestion(@RequestBody Question question){
+    public ResponseEntity<String> addQuestion(@RequestBody Question question){
 
         System.out.println(" get question from client is : " + question);
             return questionService.addQuestion(question);
