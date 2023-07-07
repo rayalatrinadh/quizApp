@@ -1,6 +1,7 @@
 package com.trinadh.quizapp.Controller;
 
 import com.trinadh.quizapp.Model.QuestionWrapper;
+import com.trinadh.quizapp.Model.SubmitQuestion;
 import com.trinadh.quizapp.Service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,6 +45,13 @@ public class QuizController {
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
 
        return quizService.getQuizQuestions(id);
+
+    }
+
+    @PostMapping("submitQuiz/{id}")
+    public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<SubmitQuestion> submitQuestions){
+
+        return quizService.submitQuiz(id,submitQuestions);
 
     }
 
