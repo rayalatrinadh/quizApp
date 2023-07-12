@@ -1,3 +1,37 @@
 ******QuizApp***********
 07/02/2023 Sunday
 127.0.0.1:8080/question/allQuestions
+snake_casing(sql)
+camelCasing (java)
+
+
+
+question table created 
+id
+category	
+difficultylevel	
+option1	
+option2	
+option3	
+option4	
+question_title	
+right_answer
+
+07/03/2023
+
+select * from question;
+select MAX(id) from question;
+Create SEQUENCE question_id_seq MINVALUE 17;
+ALTER TABLE question ALTER id SET DEFAULT nextval('question_id_seq')
+ALTER SEQUENCE question_id_seq OWNED BY question.id
+
+
+07/072023
+----------> to Create a quiz by giving Title and numQ
+http://localhost:8080/quiz/create?category=Java&numQ=5&title=JQuiz
+
+http://localhost:8080/quiz/submitQuiz/1
+
+http://localhost:8080/quiz/get/4
+
+http://127.0.0.1:8080/question/allQuestions
